@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Excercise Javascript</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="javascript.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- <input type="text" id="myInput" placeholder="Search for names.." title="Type in a name"><button onclick="myFunction()">Search</button> -->
+    <input type="text" placeholder="username" id="searchById">
+    <input type="submit" value="Search" id="submit">
+    <h2>Examine Product</h2>
+    <div class="searchResult">
+        <div>
+            <p class="title">ProductID:</p>
+            <p class="title">Name:</p>
+            <p class="title">Type:</p>
+            <p class="title">Price:</p>
+        </div>
+        <div id="search">
+        </div>
+    </div>
+    <h3>List of the Similar product </h3>
+    <table id="table">
+        <tr>
+            <th style="width:30%;"> proID</th>
+            <th style="width:30%;">name</th>
+            <th style="width:30%;">type</th>
+            <th style="width:30%;">price</th>
+        </tr>
+        <tr id="similar"></tr>
+
+    </table>
+    <h3>List of the product </h3>
+    <p id="showData"></p>
+</body>
+<script>
+    var data = [{
+        "proId": "1",
+        "name": "Computer Architecture",
+        "type": "Computers",
+        "price": "125.60"
+    }, {
+        "proId": "2",
+        "name": "Asp.Net 4 Blue Book",
+        "type": "Programming",
+        "price": "56.00"
+    }, {
+        "proId": "3",
+        "name": "Popular Science",
+        "type": "Science",
+        "price": "210.40"
+    }, {
+        "proId": "4",
+        "name": "Kieu Science",
+        "type": "Science",
+        "price": "210.40"
+    }, {
+        "proId": "5",
+        "name": "Kieu Nguyen",
+        "type": "Science",
+        "price": "210.40"
+    }]
+
+    CreateTableFromJSON();
+    $('#submit').click(function() {
+        var proId = $('#searchById').val();
+        if (proId) {
+            search(proId);
+        }
+
+    });
+</script>
+
+</html>
